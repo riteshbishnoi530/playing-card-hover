@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing cards</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #222;
+        }
+
+        .card-parent {
+            height: 350px;
+            width: 240px;
+            position: relative;
+        }
+
+        .card-a,
+        .card-2,
+        .card-3,
+        .card-4,
+        .card-5 {
+            height: 100%;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 25% bottom;
+            transition: transform 0.2s;
+            color: black;
+        }
+
+        .card-parent:hover .card-a {
+            transform: rotate(-15deg);
+        }
+
+        .card-parent:hover .card-2 {
+            transform: rotate(-5deg);
+        }
+
+        .card-parent:hover .card-3 {
+            transform: rotate(5deg);
+        }
+
+        .card-parent:hover .card-4 {
+            transform: rotate(15deg);
+        }
+
+        .card-parent:hover .card-5 {
+            transform: rotate(25deg);
+        }
+
+        .card-a::after {
+            content: "A";
+            position: absolute;
+            font-size: 32px;
+            line-height: 0.8;
+            white-space: pre;
+        }
+
+        .card-a::before {
+            content: "A";
+            top: 10px;
+            left: 10px;
+            position: absolute;
+            font-size: 32px;
+            line-height: 0.8;
+            white-space: pre;
+        }
+
+        .card-a::after {
+            bottom: 10px;
+            right: 10px;
+            transform: scaleY(-1);
+        }
+
+        .card-2::after {
+            content: "2";
+            color: red;
+            position: absolute;
+            font-size: 32px;
+            line-height: 0.8;
+            white-space: pre;
+        }
+
+        .card-2::before {
+            content: "2";
+            color: red;
+            top: 10px;
+            left: 10px;
+            position: absolute;
+            font-size: 32px;
+            line-height: 0.8;
+            white-space: pre;
+        }
+
+        .card-2::after {
+            bottom: 10px;
+            right: 10px;
+            transform: scaleY(-1);
+        }
+
+        .card-3::after {
+            content: "3";
+            color: red;
+            position: absolute;
+            font-size: 32px;
+            line-height: 0.8;
+            white-space: pre;
+        }
+
+        .card-3::before {
+            content: "3";
+            color: red;
+            top: 10px;
+            left: 10px;
+            position: absolute;
+            font-size: 32px;
+            line-height: 0.8;
+            white-space: pre;
+        }
+
+        .card-3::after {
+            bottom: 10px;
+            right: 10px;
+            transform: scaleY(-1);
+        }
+
+        .card-4::after {
+            content: "4";
+            position: absolute;
+            font-size: 32px;
+            line-height: 0.8;
+            white-space: pre;
+        }
+
+        .card-4::before {
+            content: "4";
+            top: 10px;
+            left: 10px;
+            position: absolute;
+            font-size: 32px;
+            line-height: 0.8;
+            white-space: pre;
+        }
+
+        .card-4::after {
+            bottom: 10px;
+            right: 10px;
+            transform: scaleY(-1);
+        }
+
+        .card-5::after {
+            content: "5";
+            position: absolute;
+            font-size: 32px;
+            line-height: 0.8;
+            white-space: pre;
+        }
+
+        .card-5::before {
+            content: "5";
+            top: 10px;
+            left: 10px;
+            position: absolute;
+            font-size: 32px;
+            line-height: 0.8;
+            white-space: pre;
+        }
+
+        .card-5::after {
+            bottom: 10px;
+            right: 10px;
+            transform: scaleY(-1);
+        }
+
+        .card-icon {
+            text-align: center;
+            font-size: 4em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (max-width:640px) {
+            .card-parent {
+                height: 250px;
+                width: 150px;
+                position: relative;
+            }
+
+            .card-a::after {
+                font-size: 24px;
+            }
+
+            .card-2::after {
+                font-size: 24px;
+            }
+
+            .card-3::after {
+                font-size: 24px;
+            }
+
+            .card-4::after {
+                font-size: 24px;
+            }
+
+            .card-5::after {
+                font-size: 24px;
+            }
+
+            .card-a::before {
+                font-size: 24px;
+            }
+
+            .card-2::before {
+                font-size: 24px;
+            }
+
+            .card-3::before {
+                font-size: 24px;
+            }
+
+            .card-4::before {
+                font-size: 24px;
+            }
+
+            .card-5::before {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-parent">
+        <div class="card-a">
+            <div class="card-icon">♣</div>
+        </div>
+
+        <div class="card-2">
+            <div class="card-icon">♠</div>
+        </div>
+
+        <div class="card-3">
+            <div class="card-icon">♥</div>
+        </div>
+
+        <div class="card-4">
+            <div class="card-icon">♦</div>
+        </div>
+        
+        <div class="card-5">
+            <div class="card-icon">♣</div>
+        </div>
+    </div>
+</body>
+
+</html>
